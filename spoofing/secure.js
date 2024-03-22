@@ -6,12 +6,13 @@ const app = express()
 const secret = process.argv[2];
 app.use(express.urlencoded({ extended: false }))
 
+// insecure authentication - spoofing 
 app.use(
   session({
-    secret: `${secret}`,
+    secret: `${secret}`, // sessionid is signed with thie secret. hashing important. no hard code
     cookie: {
-        httpOnly: true,
-        sameSite: true,
+        httpOnly: true, // cookies cannot be read programmatically. document.cookie will not work(in mal.js)
+        sameSite: true, // same host name(on the same system) - or the sessionid will not be sent 
     },
     resave: false,
     saveUninitialized: false

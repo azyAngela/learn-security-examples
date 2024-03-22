@@ -1,1 +1,13 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+Ans:
+ Vulnerability refers to a weakness in the design, implementation, or configuration of a 
+ software system that could be exploited by attackers to compromise the confidentiality, 
+ integrity, or availability of the system or its data. Vulnerabilities can arise from various 
+ sources, including programming errors, misconfigurations, design flaws, or improper handling of user input.
+ The secure version didn't hard code the secret, and set sameSite to true, these kind of modifications will 
+ ensure only authenticated user can access.
+
+ CIA principle violated is the Confidentiality. The program didn't ensure that only authenticated user 
+ can access the information.
+ 
