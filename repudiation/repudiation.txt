@@ -1,2 +1,15 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability lies in the lack of proper logging and authentication mechanisms when sending and retrieving messages. 
+Specifically, any user can send a message without being authenticated, and all messages are retrieved without any 
+authentication check. Additionally, there is no logging of message sending actions, which makes it difficult to 
+trace who sent a particular message.
+
+In the secure version, several improvements are made to address these vulnerabilities. Firstly, a logging mechanism 
+is implemented to log all incoming requests, including message sending actions. This ensures that there is a record 
+of who sent each message, helping to prevent repudiation. Secondly, authentication checks are introduced for both sending 
+and retrieving messages. Only authenticated users are allowed to send messages, and authentication is required to retrieve 
+messages. This ensures that messages can be traced back to authenticated users, further reducing the risk of repudiation.
+
+Message integrity checks, access control, user authentication logging can be incorporated. 

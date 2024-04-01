@@ -1,0 +1,12 @@
+Confidentiality and integrity are violated. 
+
+In the insecure version, the vulnerability lies in the lack of proper authentication 
+and authorization mechanisms when updating user roles. In the secure version, session-based 
+authentication and authorization mechanisms are implemented to address this vulnerability. 
+When a user logs in, a session is established and a unique session ID is assigned to the user. 
+Subsequent requests are checked against this session ID to ensure that the user is authenticated. 
+Additionally, the user's role is verified before allowing any updates to be made to other user roles. 
+Only users with the role of admin are permitted to update user roles, and even they are subject to 
+session-based authentication.
+
+Input validations, audit logging, 2FA can be incorporated. 

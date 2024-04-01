@@ -1,2 +1,9 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability lies in the lack of error handling for potential database errors when querying for user information.  
+This lack of error handling can potentially lead to a denial of service (DoS) attack if an attacker repeatedly sends 
+requests with malformed or invalid IDs, causing the server to become unresponsive or crash. In the secure version, 
+error handling mechanisms are implemented to address this vulnerability. 
+
+Rate limiting, input validations, monitering and alerting could be incorporated to prevent such attacks.
